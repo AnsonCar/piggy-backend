@@ -38,3 +38,5 @@ logs
 .fleet
 .idea
 # .vscode
+
+static

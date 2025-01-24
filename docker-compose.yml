@@ -1,3 +1,7 @@
+volumes:
+  db_data:
+    name: ${PROJECT_NAME}-db-data
+
 services:
   django-ninja-api:
     build:
@@ -12,10 +16,11 @@ services:
     env_file:
       - ./envs/.env.local
     # volumes:
-    #   - ./backend/django-ninja-api/django-ninja-api:/app
+    #   -
     depends_on:
       - pgsql
-    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic && python main.py"
+    command: sh -c "./start.sh"
+    restart: always
 
   pgsql:
     image: postgres:13
@@ -24,6 +29,8 @@ services:
       - 5432:5432
     env_file:
       - ./envs/.env.local
+    volumes:
+      - db_data:/var/lib/postgresql/data/pgdata
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
     restart: always
