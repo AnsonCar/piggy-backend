@@ -1,0 +1,8 @@
+ARG BASE_IMAGE_VERSION
+FROM ansoncar/django-ninja-api-basis:${BASE_IMAGE_VERSION}
+
+WORKDIR /app
+COPY . .
+
+# RUN apt-get install -y opencc
+# RUN pip install opencc hyper googletrans==4.0.0-rc1
