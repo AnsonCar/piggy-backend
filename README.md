@@ -1,13 +1,19 @@
-# 🐷 Piggy Frontend
+# 🐷 Piggy Backend
 
-Django + Django-Ninja + Django-Ninja-jwt + Postgres + Django-Admin-Interface
+Django + Django-Ninja + Django-Ninja-Jwt + Postgres + Django-Admin-Interface
 
 ## 🛠️ Tech Stack
+
+- Django5
+- Django-Ninja
+- Django-Ninja-Jwt
+- Postgres
+- Django-Admin-Interface
 
 ## 🚀 Quick Start
 
 ```
-docker compose -f docker-compose.product.yml up
+docker compose up
 ```
 
 ## 📁 Project Structure
