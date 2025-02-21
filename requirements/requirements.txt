@@ -1,0 +1,2 @@
+django-admin-interface==0.29.4 # https://pypi.org/project/django-admin-interface/
+opencc==1.1.9 # https://github.com/BYVoid/OpenCC

@@ -1,1 +1,0 @@
-django-admin-interface==0.29.4 # https://pypi.org/project/django-admin-interface/

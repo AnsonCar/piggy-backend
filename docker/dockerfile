@@ -6,6 +6,5 @@ COPY . .
 COPY ./script/start.sh ./start.sh
 RUN chmod +x start.sh
 
-RUN pip install -r ./requirements.txt
-# RUN apt-get install -y opencc
-# RUN pip install opencc hyper googletrans==4.0.0-rc1
+RUN pip install -r ./requirements/requirements.txt
+RUN apt-get install -y opencc
