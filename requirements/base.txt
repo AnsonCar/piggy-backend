@@ -7,3 +7,5 @@ orjson==3.10.7 # https://github.com/ijl/orjson
 uvicorn==0.32.0 # https://www.uvicorn.org/
 "psycopg[binary]"==3.2.3 # https://psycopg.org/psycopg3/
 python-dotenv==1.0.1 # https://github.com/theskumar/python-dotenv
+
+celery==5.4.0 # https://pypi.org/project/celery/5.4.0/
