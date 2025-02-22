@@ -20,7 +20,7 @@ jobs:
           - linux/arm64
     steps:
       - name: View Tree
-        run: tree .
+        run: tree
 
       - name: Prepare
         run: |
@@ -53,6 +53,7 @@ jobs:
         with:
           context: .
           push: true
+          no-cache: true
           file: ./docker/dockerfile-hub
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
