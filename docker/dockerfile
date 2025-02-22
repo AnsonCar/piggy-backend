@@ -3,8 +3,8 @@ FROM ansoncar/django-ninja-api-basis:${BASE_IMAGE_VERSION}
 
 WORKDIR /app
 COPY . .
-COPY ./script/start.sh ./start.sh
-RUN chmod +x start.sh
+COPY ./build/start.sh /start.sh
+RUN chmod +x /start.sh
 
 RUN pip install -r ./requirements/requirements.txt
 RUN apt-get install -y opencc
