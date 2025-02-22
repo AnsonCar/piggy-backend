@@ -3,7 +3,7 @@ volumes:
     name: ${PROJECT_NAME}-db-data
 
 services:
-  django-ninja-api:
+  django-ninja-api: &django-ninja-api
     build:
       context: .
       args:
@@ -20,6 +20,7 @@ services:
       - ./config:/app/config
     depends_on:
       - pgsql
+      - redis
     command: sh -c "./start.sh"
     restart: always
 
@@ -40,3 +41,15 @@ services:
     image: redis:6
     container_name: ${PROJECT_NAME}-redis
     restart: always
+
+  celery-worker:
+    <<: *django-ninja-api
+    ports: []
+    container_name: ${PROJECT_NAME}-celery-worker
+    command: celery -A config.celery.app worker --loglevel=info
+
+  celery-beat:
+    <<: *django-ninja-api
+    ports: []
+    container_name: ${PROJECT_NAME}-celery-beat
+    command: celery -A config.celery.app beat --loglevel=info
