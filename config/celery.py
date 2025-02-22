@@ -23,15 +23,15 @@ def debug_task(self):
 
 
 # 固定的定時任務
-app.conf.update(
-    CELERYBEAT_SCHEDULE={
-        "test_task": {
-            "task": "ansc_auth.tasks.mytest",
-            "schedule": timedelta(seconds=1),
-            "args": (),
-        },
-    }
-)
+# app.conf.update(
+#     CELERYBEAT_SCHEDULE={
+#         "test_task": {
+#             "task": "ansc_auth.tasks.mytest",
+#             "schedule": timedelta(seconds=1),
+#             "args": (),
+#         },
+#     }
+# )
 
 # celery -A config.celery.app worker --loglevel=info
 # celery -A config.celery.app beat --loglevel=info

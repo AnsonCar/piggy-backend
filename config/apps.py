@@ -13,6 +13,7 @@ INSTALLED_APPS = (
     [
         "admin_interface",
         "colorfield",
+        "import_export",
         "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",

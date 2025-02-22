@@ -19,6 +19,8 @@ from config.database import DATABASES
 from config.debug import DEBUG
 from config.middleware import MIDDLEWARE
 
+from .celery import app as celery_app
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -71,8 +73,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
-
-LANGUAGE_CODE = "zh-hans"
+"zh-hans"
+LANGUAGE_CODE = "en-US"
 
 TIME_ZONE = "Asia/Hong_Kong"
 
@@ -102,8 +104,6 @@ AUTH_USER_MODEL = "ansc_auth.CustomUser"
 """
 Celery App
 """
-from .celery import app as celery_app
-
 __all__ = ("celery_app",)
 
 CELERY_TIMEZONE = "Australia/Tasmania"
