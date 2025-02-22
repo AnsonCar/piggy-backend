@@ -7,6 +7,7 @@ NINJA_APPS = [
 
 API_APPS = [
     "ansc_auth",
+    "todo",
 ]
 
 INSTALLED_APPS = (
