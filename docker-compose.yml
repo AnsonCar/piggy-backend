@@ -16,12 +16,11 @@ services:
     env_file:
       - ./envs/.env.local
     volumes:
-      - ./ansc_auth:/app/ansc_auth
-      - ./config:/app/config
+      - ./:/app
     depends_on:
       - pgsql
       - redis
-    command: sh -c "./start.sh"
+    command: sh -c "/start.sh"
     restart: always
 
   pgsql:
@@ -45,11 +44,13 @@ services:
   celery-worker:
     <<: *django-ninja-api
     ports: []
+    volumes: []
     container_name: ${PROJECT_NAME}-celery-worker
     command: celery -A config.celery.app worker --loglevel=info
 
   celery-beat:
     <<: *django-ninja-api
     ports: []
+    volumes: []
     container_name: ${PROJECT_NAME}-celery-beat
     command: celery -A config.celery.app beat --loglevel=info
