@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 from config.apps import INSTALLED_APPS
+from config.caches import CACHES
 from config.database import DATABASES
 from config.debug import DEBUG
 from config.middleware import MIDDLEWARE
@@ -95,3 +96,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "ansc_auth.CustomUser"
+
+"""
+Env settings
+"""
+MODE = os.getenv("DJANGO_DEPLOY", "Null")
+NAME = f"Django NinjaExtra API | {MODE.capitalize()}"
