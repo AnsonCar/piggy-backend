@@ -15,8 +15,9 @@ services:
       - 8000:8000
     env_file:
       - ./envs/.env.local
-    # volumes:
-    #   -
+    volumes:
+      - ./ansc_auth:/app/ansc_auth
+      - ./config:/app/config
     depends_on:
       - pgsql
     command: sh -c "./start.sh"
