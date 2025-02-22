@@ -55,8 +55,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: true
-          # no-cache: true
           file: ./docker/dockerfile-hub
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
