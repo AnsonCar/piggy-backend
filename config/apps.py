@@ -13,6 +13,7 @@ API_APPS = [
 INSTALLED_APPS = (
     [
         "admin_interface",
+        "corsheaders",
         "colorfield",
         "import_export",
         "django.contrib.admin",
